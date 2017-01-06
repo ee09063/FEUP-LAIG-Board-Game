@@ -1,0 +1,233 @@
+<anf>
+    <globals>
+        <drawing mode="fill" shading="gouraud" background="0.7 0.7 0.7 1.0" />
+        <culling face="back" order="ccw" />
+        <lighting doublesided="true" local="true" enabled="true" ambient="0.2 0.2 0.2 1.0" />
+    </globals>
+   
+    <cameras initial="Player_Camera" >
+		<perspective id="Player_Camera" near="5.0" far="50.0" angle="67.0" pos="24.5 22.0 17.0" target="24.5 11.0 20.0" />
+    </cameras>
+  
+    <lights>
+             <light id="Overhead Lamp" type="omni" enabled="true" pos="30 30 30" marker="true">
+               <component type="ambient" value="0.6 0.6 0.6 1.0" />
+               <component type="diffuse" value="0.6 0.6 0.6 1.0" />
+               <component type="specular" value="0.6 0.6 0.6 0.7" />
+            </light>
+			
+			<light id="Lamp" type="spot" enabled="true" marker="true" pos="16 19 20" target="18 11 20"  
+                angle="55" exponent="1.0" >
+			   <component type="ambient" value="0.7 0.7 0.7 1.0" />
+               <component type="diffuse" value="0.7 0.7 0.7 1.0" />
+               <component type="specular" value="0.7 0.7 0.7 1.0" />
+            </light>
+			
+			<light id="Cabinet Lamp" type="spot" enabled="true" marker="true" pos="55 18 38" target="55 12 35"  
+                angle="55" exponent="1.0" >
+			   <component type="ambient" value="0.7 0.7 0.7 1.0" />
+               <component type="diffuse" value="0.7 0.7 0.7 1.0" />
+               <component type="specular" value="0.7 0.7 0.7 1.0" />
+            </light>
+    </lights>
+
+    <textures>       
+		<texture id="red_carpet" file="textures/red_carpet.jpg" texlength_s="1.0" texlength_t="1.0" />
+		<texture id="blue_carpet" file="textures/blue_carpet.jpg" texlength_s="0.2" texlength_t="0.2" />
+		<texture id="wall_wood" file="textures/wall_wood_1.jpg" texlength_s="0.25" texlength_t="0.5" />
+		<texture id="wall_panel" file="textures/wall_wood_3.jpg" texlength_s="0.25" texlength_t="0.5" />
+		<texture id="white_tile_1" file="textures/white_tile_1.jpg" texlength_s="0.1" texlength_t="0.1" />
+		<texture id="white_tile_2" file="textures/white_tile_2.jpg" texlength_s="1" texlength_t="1" />
+		<texture id="white_tile_3" file="textures/white_tile_3.jpg" texlength_s="1" texlength_t="1" />
+		<texture id="black_tile_1" file="textures/black_tile_1.jpg" texlength_s="1.0" texlength_t="1.0" />
+		<texture id="black_tile_2" file="textures/black_tile_2.jpg" texlength_s="1" texlength_t="1" />
+		<texture id="black_tile_3" file="textures/black_tile_3.jpg" texlength_s="1" texlength_t="1" />
+		<texture id="table_dark_marble" file="textures/dark_marble.jpg" texlength_s="1.0" texlength_t="1.0" />
+		<texture id="table_color_marble" file="textures/color_marble.jpg" texlength_s="1.0" texlength_t="1.0" />
+		<texture id="television" file="textures/tvset.jpg" texlength_s="21.375" texlength_t="12.15" />
+		<texture id="television2" file="textures/tvset2.jpg" texlength_s="21.375" texlength_t="12.15" />
+		<texture id="capture_plate" file="textures/capPlat.jpg" texlength_s="4" texlength_t="4" />
+		<texture id="leg_wood_1" file="textures/leg_wood_1.jpg" texlength_s="1" texlength_t="1" />
+		<texture id="leg_wood_2" file="textures/leg_wood_2.jpg" texlength_s="1" texlength_t="1" />
+		<texture id="chair_1" file="textures/chair1.jpg" texlength_s="1" texlength_t="1" />
+		<texture id="chair_2" file="textures/chair2.jpg" texlength_s="1" texlength_t="1" />
+		<texture id="ornate_panel" file="textures/ornate_panel.jpg" texlength_s="20" texlength_t="12" />
+		<texture id="white_piece_1" file="textures/white_piece_1.jpg" texlength_s="1" texlength_t="1" />
+		<texture id="white_piece_2" file="textures/white_piece_2.jpg" texlength_s="1" texlength_t="1" />
+		<texture id="white_piece_3" file="textures/white_piece_3.jpg" texlength_s="1" texlength_t="1" />
+		<texture id="black_piece_1" file="textures/black_piece_1.png" texlength_s="1" texlength_t="1" />
+		<texture id="black_piece_2" file="textures/black_piece_2.jpg" texlength_s="1" texlength_t="1" />
+    </textures>
+
+    <appearances>
+		<!-- -->
+		<appearance id="ornate_panel" shininess="50.0" textureref="ornate_panel">
+               <component type="ambient" value="0.5 0.5 0.5 1.0" />
+               <component type="diffuse" value="0.5 0.5 0.5 1.0" />
+               <component type="specular" value="0.5 0.5 0.5 1.0" />
+        </appearance>
+		<appearance id="ornate_rest" shininess="50.0" textureref="wall_wood">
+               <component type="ambient" value="0.5 0.5 0.5 1.0" />
+               <component type="diffuse" value="0.5 0.5 0.5 1.0" />
+               <component type="specular" value="0.5 0.5 0.5 1.0" />
+        </appearance>
+		<!-- -->
+		<appearance id="chair_1" shininess="50.0" textureref="chair_1">
+               <component type="ambient" value="0.5 0.5 0.5 1.0" />
+               <component type="diffuse" value="0.5 0.5 0.5 1.0" />
+               <component type="specular" value="0.5 0.5 0.5 1.0" />
+        </appearance>
+		<appearance id="chair_2" shininess="50.0" textureref="chair_2">
+               <component type="ambient" value="0.5 0.5 0.5 1.0" />
+               <component type="diffuse" value="0.5 0.5 0.5 1.0" />
+               <component type="specular" value="0.5 0.5 0.5 1.0" />
+        </appearance>
+		<!-- -->
+		<appearance id="black_metal" shininess="50.0">
+               <component type="ambient" value="0 0 0 1.0" />
+               <component type="diffuse" value="0.16 0.16 0.16 1.0" />
+               <component type="specular" value="0.16 0 0 1.0" />
+        </appearance>
+		<appearance id="silver_metal" shininess="50.0">
+               <component type="ambient" value="0.2 0.2 0.2 1.0" />
+               <component type="diffuse" value="0.75 0.75 0.75 1.0" />
+               <component type="specular" value="0.2 0.2 0.2 1.0" />
+        </appearance>
+		<!-- -->
+		<appearance id="leg_1" shininess="50.0" textureref="leg_wood_1">
+               <component type="ambient" value="0.5 0.5 0.5 1.0" />
+               <component type="diffuse" value="0.5 0.5 0.5 1.0" />
+               <component type="specular" value="0.5 0.5 0.5 1.0" />
+        </appearance>
+		<appearance id="leg_2" shininess="50.0" textureref="leg_wood_2">
+               <component type="ambient" value="0.5 0.5 0.5 1.0" />
+               <component type="diffuse" value="0.5 0.5 0.5 1.0" />
+               <component type="specular" value="0.5 0.5 0.5 1.0" />
+        </appearance>
+		<!-- -->
+		<appearance id="plates" shininess="50.0" textureref="capture_plate">
+               <component type="ambient" value="0.5 0.5 0.5 1.0" />
+               <component type="diffuse" value="0.5 0.5 0.5 1.0" />
+               <component type="specular" value="0.5 0.5 0.5 1.0" />
+        </appearance>
+		<!-- -->
+		<appearance id="television" shininess="50.0" textureref="television">
+               <component type="ambient" value="0.5 0.5 0.5 1.0" />
+               <component type="diffuse" value="0.5 0.5 0.5 1.0" />
+               <component type="specular" value="0.5 0.5 0.5 1.0" />
+        </appearance>
+		<appearance id="television2" shininess="50.0" textureref="television2">
+               <component type="ambient" value="0.5 0.5 0.5 1.0" />
+               <component type="diffuse" value="0.5 0.5 0.5 1.0" />
+               <component type="specular" value="0.5 0.5 0.5 1.0" />
+        </appearance>
+		<!-- -->
+		<appearance id="color_marble" shininess="50.0" textureref="table_color_marble">
+               <component type="ambient" value="0.7 0.7 0.7 1.0" />
+               <component type="diffuse" value="0.7 0.7 0.7 1.0" />
+               <component type="specular" value="0.7 0.7 0.7 1.0" />
+        </appearance>
+		<appearance id="dark_marble" shininess="50.0" textureref="table_dark_marble">
+               <component type="ambient" value="0.7 0.7 0.7 1.0" />
+               <component type="diffuse" value="0.7 0.7 0.7 1.0" />
+               <component type="specular" value="0.7 0.7 0.7 1.0" />
+        </appearance>
+		<!-- -->
+		<appearance id="red_carpet" shininess="50.0" textureref="red_carpet">
+               <component type="ambient" value="0.5 0.5 0.5 1.0" />
+               <component type="diffuse" value="0.5 0.5 0.5 1.0" />
+               <component type="specular" value="0.2 0.2 0.2 1.0" />
+        </appearance>
+		<appearance id="blue_carpet" shininess="50.0" textureref="blue_carpet">
+               <component type="ambient" value="0.6 0.6 0.6 1.0" />
+               <component type="diffuse" value="0.6 0.6 0.6 1.0" />
+               <component type="specular" value="0.3 0.3 0.3 1.0" />
+        </appearance>
+		<!-- -->
+		<appearance id="wall_wood" shininess="50.0" textureref="wall_wood">
+               <component type="ambient" value="0.4 0.4 0.4 1.0" />
+               <component type="diffuse" value="0.5 0.5 0.5 1.0" />
+               <component type="specular" value="0.2 0.2 0.2 1.0" />
+        </appearance>
+		<appearance id="wall_panel" shininess="50.0" textureref="wall_panel">
+               <component type="ambient" value="0.6 0.6 0.6 1.0" />
+               <component type="diffuse" value="0.6 0.6 0.6 1.0" />
+               <component type="specular" value="0.3 0.3 0.3 1.0" />
+        </appearance>
+		<!-- -->
+		<appearance id="red" shininess="50.0">
+               <component type="ambient" value="0.5 0.1 0.1 1.0" />
+               <component type="diffuse" value="0.5 0.1 0.1 1.0" />
+               <component type="specular" value="0.5 0.1 0.1 1.0" />
+        </appearance>
+		<!-- -->
+		<appearance id="whitePiece1" shininess="50.0" type="wp" textureref="white_piece_1">
+               <component type="ambient" value="0.2 0.2 0.2 1.0" />
+               <component type="diffuse" value="0.2 0.2 0.2 1.0" />
+               <component type="specular" value="0.6 0.5 0.3 1.0" />
+        </appearance>
+		<appearance id="whitePiece2" shininess="50.0" type="wp" textureref="white_piece_2">
+               <component type="ambient" value="0.2 0.2 0.2 1.0" />
+               <component type="diffuse" value="0.2 0.2 0.2 1.0" />
+               <component type="specular" value="0.6 0.5 0.3 1.0" />
+        </appearance>
+		<appearance id="whitePiece3" shininess="50.0" type="wp" textureref="white_piece_3">
+               <component type="ambient" value="0.2 0.2 0.2 1.0" />
+               <component type="diffuse" value="0.2 0.2 0.2 1.0" />
+               <component type="specular" value="0.6 0.5 0.3 1.0" />
+        </appearance>
+		<!-- -->
+		<appearance id="blackPiece1" shininess="50.0" type="bp">
+               <component type="ambient" value="0 0 0 1.0" />
+               <component type="diffuse" value="0.16 0.16 0.16 1.0" />
+               <component type="specular" value="0.3 0.3 0.3 1.0" />
+        </appearance>
+		<appearance id="blackPiece2" shininess="50.0" type="bp" textureref="black_piece_2">
+               <component type="ambient" value="0.2 0.1 0.07 1.0" />
+               <component type="diffuse" value="0.7 0.6 0.2 1.0" />
+               <component type="specular" value="0.6 0.5 0.3 1.0" />
+        </appearance>
+		<appearance id="blackPiece3" shininess="50.0" type="bp" textureref="ornate_panel">
+               <component type="ambient" value="0.2 0.1 0.07 1.0" />
+               <component type="diffuse" value="0.7 0.6 0.2 1.0" />
+               <component type="specular" value="0.6 0.5 0.3 1.0" />
+        </appearance>
+		<!-- -->
+		<appearance id="White Marble" shininess="50.0" type="wt" textureref="white_tile_1">
+               <component type="ambient" value="0.4 0.4 0.4 1.0" />
+               <component type="diffuse" value="0.4 0.4 0.4 1.0" />
+               <component type="specular" value="0.4 0.4 0.4 1.0" />
+        </appearance>
+		<appearance id="White Marble2" shininess="50.0" type="wt" textureref="white_tile_2">
+               <component type="ambient" value="0.4 0.4 0.4 1.0" />
+               <component type="diffuse" value="0.4 0.4 0.4 1.0" />
+               <component type="specular" value="0.4 0.4 0.4 1.0" />
+        </appearance>
+		<appearance id="White_Glass_Tile" shininess="50.0" type="wt" textureref="white_tile_3">
+               <component type="ambient" value="0.4 0.4 0.4 1.0" />
+               <component type="diffuse" value="0.4 0.4 0.4 1.0" />
+               <component type="specular" value="0.4 0.4 0.4 1.0" />
+        </appearance>
+		<!-- -->
+		<appearance id="Black Marble" shininess="50.0" type="bt" textureref="black_tile_1">
+               <component type="ambient" value="0.4 0.4 0.4 1.0" />
+               <component type="diffuse" value="0.4 0.4 0.4 1.0" />
+               <component type="specular" value="0.4 0.4 0.4 1.0" />
+        </appearance>
+		<appearance id="Black Marble2" shininess="50.0" type="bt" textureref="black_tile_2">
+               <component type="ambient" value="0.4 0.4 0.4 1.0" />
+               <component type="diffuse" value="0.4 0.4 0.4 1.0" />
+               <component type="specular" value="0.4 0.4 0.4 1.0" />
+        </appearance>
+		<appearance id="Dark_Glass_Tile" shininess="50.0" type="bt" textureref="black_tile_3">
+               <component type="ambient" value="0.4 0.4 0.4 1.0" />
+               <component type="diffuse" value="0.4 0.4 0.4 1.0" />
+               <component type="specular" value="0.4 0.4 0.4 1.0" />
+        </appearance>
+    </appearances>
+
+	<animations>
+		<animation id="linear" span="1" type="linear"/>
+		<animation id="circular" span="1" type="circular" center="4 10 4" radius="4" startang="0" rotang="180" />
+	</animations>
+</anf>
